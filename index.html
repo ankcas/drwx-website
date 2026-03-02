@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DRWX — Read. Write. Execute.</title>
+  <meta name="description" content="DRWX — Software & Systems. Odoo ERP, FreePBX, migración de servidores, infraestructura IT. República Dominicana.">
+  <meta name="keywords" content="DRWX, Odoo, FreePBX, ERP, sistemas, servidores, IT, República Dominicana">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="DRWX — Read. Write. Execute.">
+  <meta property="og:description" content="Software & Systems. Soluciones de infraestructura IT para tu empresa.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://drwx.io">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Scanline overlay -->
+  <div class="scanlines"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__logo">
+      <span class="nav__prompt">$</span>
+      <span class="nav__brand">DRWX</span>
+    </div>
+    <div class="nav__links">
+      <a href="#servicios" class="nav__link">./servicios</a>
+      <a href="#nosotros" class="nav__link">./nosotros</a>
+      <a href="#stack" class="nav__link">./stack</a>
+      <a href="#contacto" class="nav__link nav__link--cta">./contacto</a>
+    </div>
+    <button class="nav__toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu">
+    <a href="#servicios" class="mobile-menu__link">./servicios</a>
+    <a href="#nosotros" class="mobile-menu__link">./nosotros</a>
+    <a href="#stack" class="mobile-menu__link">./stack</a>
+    <a href="#contacto" class="mobile-menu__link">./contacto</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__grid"></div>
+    <div class="hero__content">
+      <div class="hero__terminal">
+        <div class="terminal__header">
+          <span class="terminal__dot terminal__dot--red"></span>
+          <span class="terminal__dot terminal__dot--yellow"></span>
+          <span class="terminal__dot terminal__dot--green"></span>
+          <span class="terminal__title">drwx@systems ~ </span>
+        </div>
+        <div class="terminal__body">
+          <p class="terminal__line terminal__line--1">
+            <span class="t-prompt">$</span> <span class="t-cmd">cat</span> <span class="t-file">empresa.txt</span>
+          </p>
+          <h1 class="terminal__line terminal__line--2 hero__title">
+            <span class="t-output">Read. Write. Execute.</span>
+          </h1>
+          <p class="terminal__line terminal__line--3">
+            <span class="t-comment"># Software &amp; Systems para empresas que necesitan</span>
+          </p>
+          <p class="terminal__line terminal__line--4">
+            <span class="t-comment"># soluciones reales, no promesas.</span>
+          </p>
+          <p class="terminal__line terminal__line--5">
+            <span class="t-prompt">$</span> <span class="t-cmd">ls</span> <span class="t-file">servicios/</span>
+          </p>
+          <p class="terminal__line terminal__line--6">
+            <span class="t-result">odoo-erp/</span>  <span class="t-result">freepbx/</span>  <span class="t-result">servidores/</span>  <span class="t-result">integraciones/</span>
+          </p>
+          <p class="terminal__line terminal__line--7">
+            <span class="t-prompt">$</span> <span class="t-cursor">▋</span>
+          </p>
+        </div>
+      </div>
+      <div class="hero__cta">
+        <a href="#contacto" class="btn btn--primary">Solicitar consulta</a>
+        <a href="#servicios" class="btn btn--ghost">Ver servicios →</a>
+      </div>
+    </div>
+    <!-- Permission string decoration -->
+    <div class="hero__permission">drwxrwxrwx  1 drwx systems  ∞  feb 22 2026  soluciones/</div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="servicios">
+    <div class="section__header">
+      <span class="section__tag">// servicios</span>
+      <h2 class="section__title">Acceso total a tus sistemas</h2>
+    </div>
+    <div class="services__grid">
+
+      <div class="service-card">
+        <div class="service-card__icon">
+          <span class="service-card__perm">-rwxr-xr-x</span>
+        </div>
+        <h3 class="service-card__title">Odoo ERP</h3>
+        <p class="service-card__desc">Implementación, migración y personalización de Odoo. Punto de venta, inventario, contabilidad, y módulos custom para tu operación.</p>
+        <ul class="service-card__tags">
+          <li>Implementación</li>
+          <li>Migración</li>
+          <li>POS</li>
+          <li>Módulos custom</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card__icon">
+          <span class="service-card__perm">-rwxr-xr-x</span>
+        </div>
+        <h3 class="service-card__title">FreePBX / VoIP</h3>
+        <p class="service-card__desc">Centrales telefónicas IP, IVR, colas de llamadas, extensiones remotas. Comunicación empresarial sin límites.</p>
+        <ul class="service-card__tags">
+          <li>FreePBX</li>
+          <li>Asterisk</li>
+          <li>IVR</li>
+          <li>SIP Trunking</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card__icon">
+          <span class="service-card__perm">-rwxr-xr-x</span>
+        </div>
+        <h3 class="service-card__title">Servidores &amp; Infra</h3>
+        <p class="service-card__desc">Migración de servidores, virtualización con Proxmox, configuración de redes, backups y monitoreo 24/7.</p>
+        <ul class="service-card__tags">
+          <li>Proxmox</li>
+          <li>Linux</li>
+          <li>Migración</li>
+          <li>Monitoreo</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card__icon">
+          <span class="service-card__perm">-rwxr-xr-x</span>
+        </div>
+        <h3 class="service-card__title">Integraciones &amp; APIs</h3>
+        <p class="service-card__desc">Conectamos tus sistemas. APIs REST, automatizaciones, integraciones entre plataformas y desarrollo de soluciones a medida.</p>
+        <ul class="service-card__tags">
+          <li>APIs REST</li>
+          <li>Python</li>
+          <li>Automatización</li>
+          <li>Custom dev</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="nosotros">
+    <div class="section__header">
+      <span class="section__tag">// nosotros</span>
+      <h2 class="section__title">chmod 777 experiencia</h2>
+    </div>
+    <div class="about__content">
+      <div class="about__text">
+        <p>DRWX nace de la trinchera — años resolviendo problemas reales de infraestructura IT para empresas retail con múltiples sucursales en República Dominicana.</p>
+        <p>No somos una consultora que te vende humo. Somos el equipo que migra tu sistema legacy a Odoo un viernes y el lunes ya estás operando. El que configura tu PBX para que tus 8 tiendas se comuniquen como si estuvieran en el mismo edificio.</p>
+        <p class="about__highlight"><span class="t-prompt">$</span> Leemos tu problema. Escribimos la solución. Ejecutamos el resultado.</p>
+      </div>
+      <div class="about__stats">
+        <div class="stat">
+          <span class="stat__number" data-count="99.9">0</span><span class="stat__symbol">%</span>
+          <span class="stat__label">uptime garantizado</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" data-count="24">0</span><span class="stat__symbol">/7</span>
+          <span class="stat__label">soporte disponible</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" data-count="0">0</span><span class="stat__symbol"> excusas</span>
+          <span class="stat__label">solo resultados</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="stack" id="stack">
+    <div class="section__header">
+      <span class="section__tag">// stack</span>
+      <h2 class="section__title">ls -la herramientas/</h2>
+    </div>
+    <div class="stack__grid">
+      <div class="stack__item">Odoo 17</div>
+      <div class="stack__item">FreePBX</div>
+      <div class="stack__item">Asterisk</div>
+      <div class="stack__item">Proxmox VE</div>
+      <div class="stack__item">Python</div>
+      <div class="stack__item">PostgreSQL</div>
+      <div class="stack__item">Linux</div>
+      <div class="stack__item">Docker</div>
+      <div class="stack__item">Nginx</div>
+      <div class="stack__item">Git</div>
+      <div class="stack__item">RustDesk</div>
+      <div class="stack__item">Android</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contacto">
+    <div class="section__header">
+      <span class="section__tag">// contacto</span>
+      <h2 class="section__title">ssh drwx@tuempresa</h2>
+    </div>
+    <div class="contact__content">
+      <div class="contact__info">
+        <p>¿Listo para darle acceso total a tu infraestructura? Cuéntanos tu proyecto y te respondemos en menos de 24 horas.</p>
+        <div class="contact__details">
+          <div class="contact__detail">
+            <span class="contact__label">email:</span>
+            <a href="mailto:hola@drwx.io">hola@drwx.io</a>
+          </div>
+          <div class="contact__detail">
+            <span class="contact__label">web:</span>
+            <a href="https://drwx.io">drwx.io</a>
+          </div>
+          <div class="contact__detail">
+            <span class="contact__label">ubicación:</span>
+            <span>Santo Domingo, RD</span>
+          </div>
+        </div>
+      </div>
+      <form class="contact__form" id="contactForm">
+        <div class="form__group">
+          <label class="form__label" for="nombre">nombre:</label>
+          <input type="text" id="nombre" name="nombre" class="form__input" placeholder="tu nombre" required>
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="email">email:</label>
+          <input type="email" id="email" name="email" class="form__input" placeholder="tu@empresa.com" required>
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="mensaje">mensaje:</label>
+          <textarea id="mensaje" name="mensaje" class="form__input form__textarea" placeholder="Cuéntanos sobre tu proyecto..." rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">$ enviar_mensaje <span class="t-cursor">▋</span></button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__content">
+      <div class="footer__logo">
+        <span class="nav__prompt">$</span> <span class="nav__brand">DRWX</span>
+        <p class="footer__tagline">Read. Write. Execute.</p>
+      </div>
+      <div class="footer__perm">
+        <pre>-rw-r--r--  1 drwx systems  2026  LICENSE
+drwxr-xr-x  4 drwx systems  ∞    soluciones/
+-rwx------  1 drwx systems  24/7  soporte.sh</pre>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 DRWX. Todos los permisos reservados.</span>
+      <span class="footer__easter">drwxrwxrwx</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
