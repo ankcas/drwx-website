@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const mensaje = form.querySelector('#mensaje').value;
 
       // For now, open mailto (replace with actual backend later)
-      const mailtoLink = `mailto:hola@drwx.io?subject=Consulta de ${encodeURIComponent(nombre)}&body=${encodeURIComponent(mensaje)}%0A%0A--- Enviado desde drwx.io por ${encodeURIComponent(nombre)} (${encodeURIComponent(email)})`;
+      const mailtoLink = `mailto:a.castillo@drwx.io?subject=Consulta de ${encodeURIComponent(nombre)}&body=${encodeURIComponent(mensaje)}%0A%0A--- Enviado desde drwx.io por ${encodeURIComponent(nombre)} (${encodeURIComponent(email)})`;
       
       window.location.href = mailtoLink;
 
