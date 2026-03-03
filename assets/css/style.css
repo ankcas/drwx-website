@@ -78,14 +78,18 @@ a:hover { color: var(--text-bright); }
   top: 0; left: 0;
   width: 100%;
   height: var(--nav-height);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
   background: rgba(10, 14, 20, 0.85);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
+}
+
+.nav nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 2rem;
 }
 
 .nav__logo {
