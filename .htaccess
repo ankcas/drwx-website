@@ -1,0 +1,63 @@
+# ============================================
+# DRWX — Security & Performance Headers
+# Hostinger Apache
+# ============================================
+
+# --- Security Headers ---
+<IfModule mod_headers.c>
+  # Prevent MIME-type sniffing
+  Header set X-Content-Type-Options "nosniff"
+
+  # Prevent clickjacking (iframe embedding)
+  Header set X-Frame-Options "DENY"
+
+  # XSS protection (legacy browsers)
+  Header set X-XSS-Protection "1; mode=block"
+
+  # HTTPS only (1 year)
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+  # Referrer policy
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Permissions policy (disable unused browser features)
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+
+  # Content Security Policy
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:;"
+</IfModule>
+
+# --- Force HTTPS ---
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# --- Block access to sensitive files ---
+<FilesMatch "\.(log|env|gitignore|htaccess)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>
+
+# Block access to hidden files/directories (.git, .claude, etc.)
+<IfModule mod_rewrite.c>
+  RewriteRule (^|/)\.(?!well-known/) - [F]
+</IfModule>
+
+# --- Caching for static assets ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+</IfModule>
+
+# --- Compression ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
