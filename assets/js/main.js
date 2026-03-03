@@ -91,24 +91,32 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      
-      const nombre = form.querySelector('#nombre').value;
-      const email = form.querySelector('#email').value;
-      const mensaje = form.querySelector('#mensaje').value;
 
-      // For now, open mailto (replace with actual backend later)
-      const mailtoLink = `mailto:a.castillo@drwx.io?subject=Consulta de ${encodeURIComponent(nombre)}&body=${encodeURIComponent(mensaje)}%0A%0A--- Enviado desde drwx.io por ${encodeURIComponent(nombre)} (${encodeURIComponent(email)})`;
-      
+      // Honeypot anti-spam: if hidden field is filled, it's a bot
+      const honeypot = form.querySelector('#website');
+      if (honeypot && honeypot.value) return;
+
+      const nombre = form.querySelector('#nombre').value.trim();
+      const email = form.querySelector('#email').value.trim();
+      const mensaje = form.querySelector('#mensaje').value.trim();
+
+      // Basic input length validation
+      if (nombre.length > 200 || email.length > 254 || mensaje.length > 5000) return;
+
+      const mailtoLink = 'mailto:a.castillo@drwx.io?subject=' +
+        encodeURIComponent('Consulta de ' + nombre) +
+        '&body=' + encodeURIComponent(mensaje + '\n\n--- Enviado desde drwx.io por ' + nombre + ' (' + email + ')');
+
       window.location.href = mailtoLink;
 
-      // Visual feedback
+      // Visual feedback (textContent to prevent XSS)
       const btn = form.querySelector('button');
-      const originalText = btn.innerHTML;
-      btn.innerHTML = '✓ Mensaje preparado';
+      const originalText = btn.textContent;
+      btn.textContent = '\u2713 Mensaje preparado';
       btn.style.background = 'var(--green)';
-      
+
       setTimeout(() => {
-        btn.innerHTML = originalText;
+        btn.textContent = originalText;
         btn.style.background = '';
       }, 3000);
     });

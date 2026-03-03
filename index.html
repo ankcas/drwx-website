@@ -7,6 +7,7 @@
   <meta name="description" content="Soluciones IT empresariales en Santo Domingo: implementación Odoo ERP, centrales FreePBX/VoIP, migración de servidores y automatización. Respuesta en 24h. Contacta a DRWX.">
   <meta name="keywords" content="DRWX, Odoo ERP República Dominicana, FreePBX Santo Domingo, implementación Odoo, migración servidores, VoIP empresarial, Proxmox, infraestructura IT, ERP dominicana, centralita IP, consultoría IT Santo Domingo, Odoo ERP, FreePBX, server migration, IT infrastructure Dominican Republic">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://drwx.io/">
 
   <!-- Open Graph -->
@@ -359,18 +360,23 @@
           </div>
         </div>
       </div>
-      <form class="contact__form" id="contactForm">
+      <form class="contact__form" id="contactForm" autocomplete="off">
+        <!-- Honeypot anti-spam -->
+        <div aria-hidden="true" style="position:absolute;left:-9999px">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
         <div class="form__group">
           <label class="form__label" for="nombre">nombre:</label>
-          <input type="text" id="nombre" name="nombre" class="form__input" placeholder="tu nombre" required>
+          <input type="text" id="nombre" name="nombre" class="form__input" placeholder="tu nombre" required maxlength="200">
         </div>
         <div class="form__group">
           <label class="form__label" for="email">email:</label>
-          <input type="email" id="email" name="email" class="form__input" placeholder="tu@empresa.com" required>
+          <input type="email" id="email" name="email" class="form__input" placeholder="tu@empresa.com" required maxlength="254">
         </div>
         <div class="form__group">
           <label class="form__label" for="mensaje">mensaje:</label>
-          <textarea id="mensaje" name="mensaje" class="form__input form__textarea" placeholder="Cuéntanos sobre tu proyecto..." rows="5" required></textarea>
+          <textarea id="mensaje" name="mensaje" class="form__input form__textarea" placeholder="Cuéntanos sobre tu proyecto..." rows="5" required maxlength="5000"></textarea>
         </div>
         <button type="submit" class="btn btn--primary btn--full">$ enviar_mensaje <span class="t-cursor">▋</span></button>
       </form>
