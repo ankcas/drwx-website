@@ -688,6 +688,34 @@ section {
   letter-spacing: 2px;
 }
 
+/* --- WhatsApp floating button --- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  z-index: 998;
+  transition: all 0.3s;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+  color: white;
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+}
+
 /* --- Scroll animations --- */
 .fade-in {
   opacity: 0;
