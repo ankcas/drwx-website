@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Scroll reveal animations ---
   const fadeElements = document.querySelectorAll(
-    '.service-card, .about__text, .about__stats, .stat, .stack__item, .contact__info, .contact__form, .section__header'
+    '.service-card, .about__text, .about__stats, .stat, .stack__item, .portfolio-card, .portfolio__profiles, .contact__info, .contact__form, .section__header'
   );
 
   fadeElements.forEach(el => el.classList.add('fade-in'));
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
         // Stagger animation for grid items
-        const delay = entry.target.closest('.services__grid, .stack__grid, .about__stats')
+        const delay = entry.target.closest('.services__grid, .stack__grid, .about__stats, .portfolio__grid')
           ? i * 80 : 0;
         setTimeout(() => entry.target.classList.add('visible'), delay);
         observer.unobserve(entry.target);
